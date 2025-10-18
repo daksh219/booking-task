@@ -4,6 +4,9 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\BookingController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+    return redirect()->route('login.form');
+});
 Route::get('register', [AuthController::class, 'showRegisterForm'])->name('register.form');
 Route::post('register', [AuthController::class, 'register'])->name('register');
 
